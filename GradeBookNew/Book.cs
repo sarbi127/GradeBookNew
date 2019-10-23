@@ -34,6 +34,7 @@ namespace GradeBook
 
             result.Average /= grades.Count;
 
+            //Swich
             switch(result.Average)
             {
 
