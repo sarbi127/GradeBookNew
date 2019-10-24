@@ -4,6 +4,8 @@ using System.Text;
 
 namespace GradeBook
 {
+
+    public delegate void GradeAddedDelegate(object sender, EventArgs args); 
     public class Book
     {
         public Book(string name)
@@ -14,10 +16,26 @@ namespace GradeBook
 
          public void AddGrade(double grade)
         {
-            grades.Add(grade);
+            if(grade <= 100 && grade >= 0)
+            {
+
+                grades.Add(grade);
+
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
+
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid value");
+            }
+            
 
         }
 
+        public event GradeAddedDelegate GradeAdded;
         public Statistics GetStatistics()
         {
             var result = new Statistics();
@@ -34,7 +52,7 @@ namespace GradeBook
 
             result.Average /= grades.Count;
 
-            //Swich
+            //Swich 1
             switch(result.Average)
             {
 
