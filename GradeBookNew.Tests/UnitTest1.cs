@@ -7,8 +7,6 @@ namespace GradeBook.Tests
     {
         [Fact]
 
-
-
         public void BookCalculatesAnAverageGrade()
         {
             //Test1
