@@ -35,6 +35,7 @@ namespace GradeBook.Tests
             count++;
             return message;
         }
+        [Fact]
         public void GetBookReturnDifferentObjects()
         {
 
@@ -45,7 +46,7 @@ namespace GradeBook.Tests
            
         }
 
-        private void SetName(Book book, string name)
+        private void SetName(InMemoryBook book, string name)
         {
 
             book.Name = name;
@@ -64,10 +65,10 @@ namespace GradeBook.Tests
         }
 
 
-        Book GetBook(String name)
+        InMemoryBook GetBook(String name)
         {
 
-            return new Book(name);
+            return new InMemoryBook(name);
 
         }
     }

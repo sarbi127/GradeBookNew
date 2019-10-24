@@ -6,15 +6,42 @@ namespace GradeBook
 {
 
     public delegate void GradeAddedDelegate(object sender, EventArgs args); 
-    public class Book
+    
+    //inher, base class
+    public class NameObject 
     {
-        public Book(string name)
+        public NameObject(string name)
+        {
+            Name = name;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
+
+    public abstract class Book : NameObject
+    {
+
+        public Book(string name):base(name)
+        {
+
+        }
+
+        public abstract void AddGrade(double grade);
+    }
+    
+    public class InMemoryBook : Book
+    {
+        public InMemoryBook(string name): base(name)
         {
             grades = new List<double>();
             Name = name;
         }
 
-         public void AddGrade(double grade)
+         public override void AddGrade(double grade)
         {
             if(grade <= 100 && grade >= 0)
             {
@@ -83,6 +110,6 @@ namespace GradeBook
         }
 
         private List<double> grades;
-        public string Name;
+       //public string Name;
     }
 }
