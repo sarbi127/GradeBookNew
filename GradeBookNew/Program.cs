@@ -17,7 +17,7 @@ namespace GradeBook
             //book.AddGrade(89.1);
             //book.AddGrade(1.0);
             //book.AddGrade(3.0);
-            //book.GetStatistics();
+            //book.GetStatistics();   
 
             EnterGrades(book);
 

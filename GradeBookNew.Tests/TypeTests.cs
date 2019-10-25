@@ -2,10 +2,8 @@ using System;
 using Xunit;
 
 namespace GradeBook.Tests
-
-    
+  
 {
-
     public delegate string WriteLogDelegate(string logMessage);
     public class TypeTests
     {

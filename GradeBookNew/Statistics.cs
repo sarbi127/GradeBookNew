@@ -44,9 +44,7 @@ namespace GradeBook
 
                     default:
                         return 'F';
-                       
-
-
+        
                 }
 
             }
